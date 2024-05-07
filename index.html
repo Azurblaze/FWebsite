@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <style>
+        body {
+            background-image: url('Background.png'); /* Specify the path to your background image */
+            background-size: contain; /* Resize the background image to fit within the viewport */
+            background-repeat: no-repeat; /* Prevent the background image from repeating */
+            background-position: center; /* Center the background image horizontally and vertically */
+            margin: 0; /* Remove default body margin */
+            padding: 0; /* Remove default body padding */
+        }
+        .container {
+            position: relative; /* Positioning context for absolute positioning */
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start; /* Align items at the start of the container */
+            min-height: 100vh; /* Set minimum container height to 100% of viewport height */
+            padding: 20px; /* Add some padding to center the content vertically */
+        }
+        .frog {
+            width: 200px;
+            height: 200px;
+            background-size: cover; /* Ensure the background image covers the entire div */
+            background-repeat: no-repeat; /* Prevent the background image from repeating */
+        }
+        .blue-frog {
+            background-image: url('BFrog.jpg'); /* Update the path to the blue frog image */
+            background-color: blue; /* Fallback color in case the image doesn't load */
+        }
+        .green-frog {
+            background-image: url('GFrog.jpg'); /* Update the path to the green frog image */
+            background-color: green; /* Fallback color in case the image doesn't load */
+        }
+        .title {
+            position: absolute; /* Position the title absolutely within the container */
+            top: 70px; /* Adjust the top position as needed */
+            left: 50%; /* Center the title horizontally */
+            transform: translateX(-50%); /* Adjust for center alignment */
+            font-size: 60px; /* Adjust font size as needed */
+            font-family: cursive; /* Specify cursive font family */
+            color: #36D0D7; /* Ensure the title is visible on the background image */
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5); /* Add a text shadow for better visibility */
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="frog blue-frog"></div>
+        <div class="title">Frog Pond</div>
+        <div class="frog green-frog"></div>
+    </div>
+</body>
+</html>
