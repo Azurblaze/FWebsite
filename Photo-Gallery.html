@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Photo Gallery</title>
+    <style>
+        /* Basic styling */
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+        header {
+            background-color: #333;
+            color: #fff;
+            text-align: center;
+            padding: 10px;
+        }
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        #file-input {
+            display: none;
+        }
+        .upload-button {
+            background-color: #4CAF50;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            cursor: pointer;
+            margin-bottom: 20px;
+        }
+        #file-preview {
+            max-width: 100%;
+            margin-bottom: 20px;
+        }
+        .photo-gallery {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+        .photo-gallery img {
+            max-width: 200px;
+            margin: 10px;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Photo Gallery</h1>
+        <a href="index.html" style="color: white; text-decoration: none; margin-right: 20px;">Home</a>
+    </header>
+    <div class="container">
+        <h2>Welcome to Our Family Photo Gallery!</h2>
+        <p>Share your memories and photos with the whole family.</p>
+        <button class="upload-button" onclick="document.getElementById('file-input').click()">Upload Photo</button>
+        <input type="file" id="file-input" accept="image/*" onchange="uploadFile(event)">
+        <div id="file-preview"></div>
+        
+        <!-- Container for displaying uploaded photos -->
+        <div id="photo-gallery" class="photo-gallery">
+            <!-- Uploaded photos will be displayed here -->
+        </div>
+    </div>
+
+    <script>
+        // Function to preview uploaded image
+        function previewFile(file) {
+            var preview = document.getElementById('photo-gallery');
+            var img = document.createElement('img');
+            img.src = URL.createObjectURL(file);
+            preview.appendChild(img);
+        }
+
+        // Function to handle file upload
+        function uploadFile(event) {
+            var file = event.target.files[0];
+            previewFile(file);
+
+            // You'll need to implement server-side logic to handle file upload and storage
+            // This JavaScript function can trigger an AJAX request to send the file data to the server
+        }
+    </script>
+</body>
+</html>
